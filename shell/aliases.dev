@@ -1,0 +1,35 @@
+#!/bin/sh
+alias python="python3"
+alias tclsh='rlwrap tclsh'
+
+alias yarn="corepack yarn"
+alias yarnpkg="corepack yarnpkg"
+alias pnpm="corepack pnpm"
+alias pnpx="corepack pnpx"
+alias npm="corepack npm"
+alias npx="corepack npx"
+
+# Work with OTF and WOFF font files
+alias makewoff="sfnt2woff"
+
+# `bat` styling:
+alias bat="\bat --theme=GitHub"
+
+# Pretty print XML (use `jq` for json):
+alias xq="xmllint --format"
+
+# Show local ip:
+alias localip="ipconfig getifaddr en0"
+
+# Lock the screen (when going AFK)
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+# Copy public key to clipboard:
+alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+
+# I use this a lot:
+alias shrug="echo '¯\_(ツ)_/¯' | pbcopy | echo '=> Copied to pasteboard.'"
+
+# python2 (required by npm and other tools, installed via pyenv):
+# (won't work without `pyenv` and `pyenv install 2.7.17`)
+alias python2="$HOME/.pyenv/versions/2.7.17/bin/python2"

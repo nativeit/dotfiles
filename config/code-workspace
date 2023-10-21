@@ -1,0 +1,51 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"makefile.extensionOutputFolder": "./.vscode",
+		"files.autoGuessEncoding": true,
+		"files.autoSave": "onFocusChange",
+		"files.autoSaveDelay": 10000,
+		"files.insertFinalNewline": true,
+		"files.trimFinalNewlines": true,
+		"files.trimTrailingWhitespace": true,
+		"workbench.list.smoothScrolling": true
+	},
+	"files.exclude": {
+		"**/.git": true,         // this is a default value
+		"**/.DS_Store": true,    // this is a default value
+		"**/node_modules": true, // this excludes all folders named node_modules
+		// alternative version:
+		"node_modules": true,    // this excludes only from the root
+		"/.adobe": true,
+		".audiogridder": true,
+		".cache": true,
+		".bitmonero": true,
+		".bridge": true,
+		".cups": true,
+		".dbus": true,
+		".dropbox": true,
+		".easyeda": true,
+		".freerdp": true,
+		".IdentityServices": true,
+		".IdentityServices.d": true,
+		".mono": true,
+		".Natron": true,
+		".oracle_jre_usage": true,
+		".p2": true,
+		".parsec": true,
+		".qucs": true,
+		".quokka": true,
+		".redhat": true,
+		"Applications": true,
+		"Applications/*": true,
+		"Creative Cloud Files": true,
+		"Creative Cloud Files/*": true,
+		"Databases": true,
+		"Databases/*": true
+	}
+}
+ // Place your settings in this file to overwrite default and user settings.

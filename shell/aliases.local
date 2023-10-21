@@ -1,0 +1,120 @@
+#!/bin/bash
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+
+alias zshconfig="nano ~/.zshrc"
+alias ohmyzsh="nano ~/.oh-my-zsh"
+alias ls="colorls -hal"
+alias gitclone="git clone --recurse-submodules"
+alias gitsub="git submodule add"
+alias dl="curl -O"
+#function ex() {
+#
+#       FILENAME=${0}
+#       DIRNAME="basename ${0}"
+#
+#       fprint "Extracting ${FILENAME} into ${PWD}/${DIRNAME}. Please wait..."
+#       tar -xzf ${FILENAME} && rm ${FILENAME}
+#       cd ./${DIRNAME}
+#}
+
+# ls
+alias ls='exa -ha --icons --group-directories-first --color-scale'
+alias l='exa -hal --icons --group-directories-first --color-scale'
+alias ll='l'
+alias tree='exa -Thal --icons --group-directories-first --color-scale'
+
+# Edit/view user rc files
+alias bashrc='nano ~/.bashrc'
+alias zshrc='nano ~/.zshrc' 
+alias zshconfig='nano ~/.zshrc'
+alias ohmyzshrc="nano ~/.oh-my-zsh"
+alias ohmyzshconfig="nano ~/.oh-my-zsh"
+alias nanorc='nano ~/.nanorc'
+alias nanoconfig='nano ~/.nanorc'
+
+alias ln='ln -v'
+alias mkdir='mkdir -p'
+alias e='$EDITOR'
+alias v='$VISUAL'
+
+# Aptitude
+alias app='sudo aptitude'
+alias appadd='aptitude install -y'
+alias add='aptitude install -y'
+
+# Bundler
+alias b='bundle'
+
+# Docker
+alias dvol='cd /var/lib/docker/volumes && exa -hal --icons --group-directories-first --color-scale'
+alias dexe='docker exec -it'
+alias dtag='docker tag'
+
+# Git
+alias gitclone="git clone --recurse-submodules"
+alias gitsub="git submodule add"
+
+# Rails
+alias migrate='bin/rails db:migrate db:rollback && bin/rails db:migrate db:test:prepare'
+alias s='rspec'
+
+# Ruby
+alias gem='/usr/local/Cellar/ruby/3.1.2_1/bin/gem'
+
+# Pretty print the path
+alias path='echo $PATH | tr -s ':' '\n''
+
+alias ...='../..'
+alias ....='../../..'
+alias .....='../../../..'
+alias ......='../../../../..'
+alias 1='cd -1'
+alias 2='cd -2'
+alias 3='cd -3'
+alias 4='cd -4'
+alias 5='cd -5'
+alias 6='cd -6'
+alias 7='cd -7'
+alias 8='cd -8'
+alias 9='cd -9'
+alias _='sudo '
+alias clr='clear; echo Currently logged in on $TTY, as $USERNAME in directory $PWD.'
+alias diff='diff --color'
+alias egrep='grep -E --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}'
+alias fgrep='grep -F --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}'
+alias g=git
+alias gc='git clone --recurse-submodules'
+alias repos='cd ~/dev/git'
+
+# SSH shortcuts
+alias ntv01='ssh stephen@ntv01.hv10.host.nativeit.net'
+alias ntv02='ssh stephen@ntv02.hv20.host.nativeit.net'
+alias web02='ssh stephen@web02.hv10.host.nativeit.net -p 4222'
+alias elwx01='ssh stephen@elwx01.hv20.host.nativeit.net'
+alias web03='ssh stephen@web03.hv20.host.nativeit.net'
+alias rmm01='ssh stephen@rmm01.hv10.host.nativeit.net'
+alias hv10='ssh stephen@hv10.host.nativeit.net -p 2242'
+alias hv20='ssh root@hv20.host.nativeit.net -p 22'
+alias stor100='ssh root@backup.hv100.home.nativeit.net -p 22'
+alias git01='ssh git.hv10.host.nativeit.net'
+alias ocs='ssh stephen@51.81.27.170'
+alias foreman='ssh stephen@foreman.hv20.host.nativeit.net'
+alias ops02='ssh stephen@ops02.hv20.host.nativeit.net'
+alias home='ssh stephen@192.168.1.10 -p 4222'
+alias deb='ssh stephen@192.168.1.10 -p 4222'
+alias vps01='ssh root@147.135.114.47'
+
+alias lzd='lazydocker'
+alias ntv='fig run @ntv-one/'
+
+alias pgsql.manage='docker compose exec web python manage.py'
+alias pgsql.install='docker compose exec web pipenv install'
+alias pgsql.up='docker compose up -d'
+alias pgsql.down='docker compose down'
+alias pgsql.logs='docker compose logs'
+
+# Multipass
+alias mp='multipass'
+alias ntv-pm='multipass shell pm'
