@@ -19,6 +19,9 @@ cd "$BASEDIR"
 git submodule sync --quiet --recursive
 git submodule update --init --recursive
 
+# Install ZSH if neccessary
+[ ! -x /usr/bin/zsh ] && DEBIAN_FRONTEND=noninteractive apt-get -y install zsh zsh-common zsh-autosuggestions zsh-syntax-highlighting >/dev/null
+
 # Linking dotfiles:
 
 run_dotbot () {
