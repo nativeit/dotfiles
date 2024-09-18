@@ -1,6 +1,8 @@
 # Selected WinGet Packages
 
-## These packages are included in provisioning profiles, PR's for additional items and/or changes welcomed.
+Packages included in provisioning profiles. PR's for additional items and/or changes are welcome.
+
+---
 
 ### Admin
 
