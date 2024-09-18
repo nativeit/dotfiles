@@ -1,0 +1,84 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  assertions:
+    - resource: Microsoft.Windows.Developer/OsVersion
+      directives:
+        description: Verify min OS version requirement
+        allowPrerelease: true
+      settings:
+        MinVersion: '10.0.22000'
+  resources:
+    - resource: Microsoft.Windows.Developer/DeveloperMode   # Enable Developer Mode
+      directives:
+        description: Enable Developer Mode
+        allowPrerelease: true
+      settings:
+        Ensure: Present 
+ - resource: Microsoft.WinGet.DSC/WinGetPackage             # Setup VisualStudio 2022 Community
+      id: vsPackage
+      directives:
+        description: Install Visual Studio 2022 Community
+        allowPrerelease: false
+      settings:
+        id: Microsoft.VisualStudio.2022.Community
+        source: winget
+    - resource: Microsoft.VisualStudio.DSC/VSComponents     # Configure add'l VS 2022 packages
+      dependsOn:
+        - vsPackage
+      directives:
+        description: Install required VS workloads from vsconfig file
+        allowPrerelease: true
+      settings:
+        productId: Microsoft.VisualStudio.Product.Community
+        channelId: VisualStudio.17.Release
+        vsConfigFile: '${WinGetConfigRoot}\..\.vsconfig'
+        includeRecommended: true
+    - resource: Microsoft.WinGet.DSC/WinGetPackage          # Install Windows Terminal
+      id: wintermPackage
+      directives:
+        description: Install Windows Terminal
+        allowPrerelease: false
+      settings:
+        id: Microsoft.WindowsTerminal
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage          # Install Oh-My-Posh
+      dependsOn:
+        - wintermPackage
+      id: ohmyposhPackage
+      directives:
+        description: Install Oh-My-Posh
+        allowPrerelease: false
+      settings:
+        id: JanDeDobbeleer.OhMyPosh
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage          # Install Notepad++
+      id: nppPackage
+      directives:
+        description: Install Notepad++
+        allowPrerelease: false
+      settings:
+        id:  Notepad++.Notepad++
+        source: winget
+  configurationVersion: 0.2.0
+  
+### Admin
+  Devolutions.RemoteDesktopManager
+  Devolutions.RemoteDesktopManagerAgent
+  RustDesk.RustDesk
+  Famatech.AdvancedIPScanner
+  
+### Applications
+  Mozilla.Firefox
+  VideoLAN.VLC
+  Bitwarden.Bitwardena
+  Apache.OpenOffice | TheDocumentFoundation.LibreOffice | ONLYOFFICE.DesktopEditors
+  
+### Development
+  Microsoft.VisualStudioCode | VSCodium.VSCodium
+  direnv.direnv
+  Git.Git
+  GitHub.cli
+  Bitwarden.CLI
+  Docker.DockerDesktop
+  antonreshetov.massCode
+  
