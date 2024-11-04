@@ -93,3 +93,14 @@ export PATH="/opt/homebrew/bin:/usr/local/sbin:/usr/local/bin:/usr/local/bin:/us
 # Custom envs:
 source "$ZSH/oh-my-zsh.sh"
 source "$HOME/.shell_env"
+
+### Run init scripts found in script directory
+export SCRIPT_DIR=${HOME}/.zshrc.d
+
+run_scripts() {
+  for script in ${SCRIPT_DIR}/*.sh; do
+    [ -x $script ] || continue
+    . $script
+  done
+}
+run_scripts
